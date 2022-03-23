@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  height: 20vh;
+  width: 100%;
+}
+
+.content {
+  width: 100%;
+}
+
+.ct-card {
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 1;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+i {
+  font-size: 2rem;
+}

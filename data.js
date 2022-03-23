@@ -1,4 +1,4 @@
-[
+const array=[
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -112,3 +112,26 @@
 		color: 'blue'
 	}
 ];
+
+const container=document.querySelector('#body-content');
+array.forEach(element => {
+	createCard(element);
+});
+
+// Funcition that creates Element
+function createCard(element){
+	container.innerHTML+=`<div class="ct-card col-2">
+	<span><i class="fa-solid ${element.prefix}${element.name}"></i></span>
+	<span>${element.name}</span>
+</div>`;
+	
+}
+
+
+
+
+
+// <div class="card d-flex">
+//                 <span><i class="fa-solid fa-dog"></i></span>
+//                 <span>DOG</span>
+//             </div>
