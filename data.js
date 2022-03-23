@@ -124,7 +124,7 @@ const selection=document.querySelector('#ct-select');
 // button that filter the elements
 filterButton.addEventListener('click',function(){
 	const selectedValue=selection.value;
-	console.log(selectedValue);
+	
 	switch(selectedValue){
 		case 'all':
 			filterCards(array);
@@ -165,6 +165,25 @@ function createCard(element){
 	<span>${element.name}</span>
 </div>`;	
 }
+
+
+let options=[];
+ array.forEach(element=>{
+	if(!options.includes(element.type)){
+		options.push(element.type);
+	}
+});
+
+
+function createSelect(array){
+	selection.innerHTML=`<option value="all" selected>all</option>`
+	options.forEach(element=>{
+		selection.innerHTML+=`<option value="${element}" >${element}</option>`
+	});
+}
+
+createSelect(options);
+
 
 
 
