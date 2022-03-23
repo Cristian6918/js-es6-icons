@@ -25,3 +25,12 @@ header {
 i {
   font-size: 2rem;
 }
+.ct-animal {
+  color: blue;
+}
+.ct-user {
+  color: violet;
+}
+.ct-vegetable {
+  color: orange;
+}

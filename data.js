@@ -113,19 +113,62 @@ const array=[
 	}
 ];
 
+//-----------------------------------//
+const animal=array.filter(array=>array.type==='animal');
+const user=array.filter(array=>array.type==='user');
+const vegetable=array.filter(array=>array.type==='vegetable');
 const container=document.querySelector('#body-content');
-array.forEach(element => {
-	createCard(element);
+const filterButton=document.querySelector('#filter-button');
+const selection=document.querySelector('#ct-select');
+
+// button that filter the elements
+filterButton.addEventListener('click',function(){
+	const selectedValue=selection.value;
+	console.log(selectedValue);
+	switch(selectedValue){
+		case 'all':
+			filterCards(array);
+			break;
+		case 'user':
+			filterCards(user);
+			break;
+		case 'animal':
+			filterCards(animal);
+			break;
+		case 'vegetable':
+			filterCards(vegetable);
+			break;
+	}
+	
 });
 
-// Funcition that creates Element
+// first init with all the elements
+filterCards(array);
+
+
+
+// Function that Create only the selected Cards
+function filterCards(x){
+	container.innerHTML='';
+	x.forEach(element => {
+		createCard(element);
+
+	});
+}
+
+
+
+// Funcition that creates The card
 function createCard(element){
 	container.innerHTML+=`<div class="ct-card col-2">
-	<span><i class="fa-solid ${element.prefix}${element.name}"></i></span>
+	<span><i class="fa-solid ${element.prefix}${element.name}" style='color:${element.color}'></i></span>
 	<span>${element.name}</span>
-</div>`;
-	
+</div>`;	
 }
+
+
+
+
 
 
 

@@ -13,11 +13,24 @@
 </head>
 <body>
     <div class="container-fluid">
-        <header></header>
-        <div class="row content " id="body-content">
+        <header>
+           
+        </header>
+        <div class="container content">
+            <div class="row justify-content-end gap-3 m-auto mb-5 mt-5">
+                <label for="selection" class="col-2 rounded-pill">Filter</label>
+                <select class="col-4 rounded-pill" name="selection" id="ct-select">
+                    <option value="all" selected>ALL</option>
+                    <option value="animal">ANIMAL</option>
+                    <option value="user">USER</option>
+                    <option value="vegetable">VEGETABLE</option>
+                </select>
+                <button id="filter-button" class="btn btn-primary rounded-pill col-3">FILTER</button>
+            </div>
+        <div class="row  justify-content-evenly " id="body-content">
             
-
         </div>
+    </div>
     </div>
     
 </body>
